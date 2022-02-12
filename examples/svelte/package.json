@@ -8,7 +8,9 @@
     "dev": "rollup -c -w",
     "start": "sirv public --no-clear",
     "test:e2e": "testcafe chrome -e test/ --hostname localhost --selector-timeout 8000",
-    "test": "npm run build && concurrently \"npm run start\" \"npm run test:e2e\" --kill-others --success first"
+    "test": "npm run build && concurrently \"npm run start\" \"npm run test:e2e\" --kill-others --success first",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "20.0.0",
@@ -28,6 +30,8 @@
     "testcafe": "1.15.3"
   },
   "dependencies": {
-    "sirv-cli": "1.0.14"
-  }
+    "sirv-cli": "1.0.14",
+    "@snyk/protect": "latest"
+  },
+  "snyk": true
 }
