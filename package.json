@@ -77,7 +77,9 @@
     "disc": "npm run transpile && npm run build:es && cross-env NODE_ENV=disc webpack --config ./config/webpack.config.js",
     "preversion": "npm run lint && npm run test",
     "dev": "watch 'npm run test:fast' src/ test/",
-    "dev:example": "watch 'npm run transpile:src && echo \"done\"' src/ test/"
+    "dev:example": "watch 'npm run transpile:src && echo \"done\"' src/ test/",
+    "prepublish": "npm run snyk-protect",
+    "snyk-protect": "snyk-protect"
   },
   "pre-commit": [
     "lint"
@@ -124,7 +126,8 @@
     "spark-md5": "^3.0.1",
     "url": "^0.11.0",
     "util": "0.12.4",
-    "z-schema": "5.0.1"
+    "z-schema": "5.0.1",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "@babel/cli": "7.14.8",
@@ -175,7 +178,7 @@
     "graphql": "15.5.1",
     "graphql-subscriptions": "1.2.1",
     "gzip-size-cli": "5.0.0",
-    "karma": "6.3.4",
+    "karma": "6.3.14",
     "karma-babel-preprocessor": "8.0.1",
     "karma-browserify": "8.1.0",
     "karma-chrome-launcher": "3.1.0",
@@ -190,7 +193,7 @@
     "leveldown": "6.0.1",
     "madge": "5.0.1",
     "memdown": "6.0.0",
-    "mocha": "9.0.2",
+    "mocha": "9.2.0",
     "mocha.parallel": "0.15.6",
     "nconf": "0.11.3",
     "pouchdb": "7.2.2",
@@ -210,7 +213,7 @@
     "rollup-plugin-commonjs": "10.1.0",
     "rollup-plugin-node-resolve": "5.2.0",
     "rxjs": "7.3.0",
-    "shelljs": "0.8.4",
+    "shelljs": "0.8.5",
     "source-map-support": "0.5.19",
     "subscriptions-transport-ws": "0.9.19",
     "terser": "5.7.1",
@@ -222,5 +225,6 @@
     "webpack": "4.46.0",
     "webpack-bundle-analyzer": "4.4.2",
     "webpack-cli": "4.8.0"
-  }
+  },
+  "snyk": true
 }
